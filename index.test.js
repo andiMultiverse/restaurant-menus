@@ -49,20 +49,11 @@ describe("Restaurant and Menu Models", () => {
   });
 
   test("can delete Restaurants", async () => {
-    // TODO - write test
+    await Restaurant.bulkCreate(seedRestaurant)
     await Restaurant.destroy({where: {name: "AppleBees"}});
-    const deletedRestaurant = await Restaurant.findAll();
-    expect(deletedRestaurant.length).toEqual(2);
+    const deletedRestaurants = await Restaurant.findAll();
+    console.log(deletedRestaurants);
+    expect(deletedRestaurants.length).toEqual(2);
   });
 });
 
-
-// it("deletedRocket contains the deleted rocket", () => {
-//     // destroy returns the deleted instance
-//     expect(deletedRocket).toEqual(
-//       expect.objectContaining({
-//         name: "High Flyer",
-//         difficultyLevel: 5,
-//       })
-//     );
-//   });

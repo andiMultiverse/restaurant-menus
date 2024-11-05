@@ -6,6 +6,9 @@ class Menu extends Model {}
 
 Menu.init({
   title: DataTypes.STRING,
+}, {
+    sequelize,
+    modelName: "menu",
 });
 
 module.exports = { Menu };
