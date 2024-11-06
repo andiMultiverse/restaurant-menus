@@ -1,4 +1,4 @@
-const { sequelize } = require("../db");
+const { sequelize, Model, DataTypes } = require("../db");
 
 
 // TODO - create a Menu model
